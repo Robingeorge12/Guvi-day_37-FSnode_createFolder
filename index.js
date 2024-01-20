@@ -28,16 +28,16 @@ app.post("/create-file", (req, res) => {
     const day = `${date.getDate()}`.padStart(2, "0");
     const time = `${date.getTime()}`.padStart(2, "0");
     let TimeStamp = `${date.getDate()}_${date.getMonth() + 1}_${date.getFullYear()}_${date.getHours()}hour_${date.getMinutes()}min_${date.getSeconds()}sec`;
-    let fileName = `file_${TimeStamp}.txt`
+    let fileName = `${TimeStamp}.txt`
     let filePath = path.join(folderPath,fileName)
     // console.log(TimeStamp)
  
-    fs.writeFile(filePath, `${TimeStamp}- this is the file of Reading  Blogs`, (er) => {
+    fs.writeFile(filePath, `file_${TimeStamp}- this is the file of Reading  Blogs`, (er) => {
       if (er) {
         return res.send({ msg: er });
       } else {
         console.log(TimeStamp)
-       return res.send({ msg: "file has been created fileName:",TimeStamp});
+       return res.send({ msg: `file has been created fileName:,${TimeStamp}`});
       }
     });
    
