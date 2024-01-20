@@ -32,12 +32,12 @@ app.post("/create-file", (req, res) => {
     let filePath = path.join(folderPath,fileName)
     // console.log(TimeStamp)
  
-    fs.writeFileSync(filePath, `${TimeStamp}- this is the file of Reading  Blogs`, (er) => {
+    fs.writeFile(filePath, `${TimeStamp}- this is the file of Reading  Blogs`, (er) => {
       if (er) {
         return res.send({ msg: er });
       } else {
         console.log(TimeStamp)
-       return res.send({ msg: "file has been created"});
+       return res.send({ msg: "file has been created fileName:",TimeStamp});
       }
     });
    
