@@ -5,7 +5,10 @@ app.use(express.json());
 const path = require("path");
 
 
+app.get("/",(req,res)=>{
 
+    res.send({message:"welcome To Node FS please, which provides =>/create-file==>path for create your file, for Reading any file , query as this format ?fileName=20_1_2024_23hour_17min_42sec"})
+})
 
 
 const folderPath = "./textFiles";
